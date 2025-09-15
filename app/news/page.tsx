@@ -9,7 +9,6 @@ export default function NewsIndex() {
     <div className="space-y-8">
       <header className="space-y-2">
         <h1 className="text-3xl font-semibold">News & Events</h1>
-        <p className="text-zinc-700">Make the flyer the initial page. Click it to view booking details.</p>
       </header>
 
       <Reveal>
