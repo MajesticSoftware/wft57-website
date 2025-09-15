@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     "Prince Hall Masonic lodge in Maryland focused on brotherhood, charity, and community.",
   icons: {
     icon: [
-      { url: "/images/WFTLogo.webp", type: "image/webp" },
+      { url: "/images/favicon.ico", type: "image/x-icon" },
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/images/WFTLogo.webp", type: "image/webp" },
     ],
     apple: [
       { url: "/images/WFTLogo.webp" },
