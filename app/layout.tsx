@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +23,10 @@ export const metadata: Metadata = {
   description:
     "Prince Hall Masonic lodge in Maryland focused on brotherhood, charity, and community.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.svg" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
   },
   openGraph: {
     title: "William F. Taylor Lodge #57",
@@ -45,6 +49,7 @@ export default function RootLayout({
         <Header />
         <main className="container-max py-8 space-y-12">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
