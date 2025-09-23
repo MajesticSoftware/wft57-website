@@ -12,6 +12,16 @@ const nextConfig: NextConfig = {
         destination: "/news",
         permanent: true,
       },
+      {
+        source: "/news-events/wft57-trinidad-visitation-2024",
+        destination: "/news/trinidad-trip",
+        permanent: true,
+      },
+      {
+        source: "/news-events/wft57-trinidad-visitation-2025",
+        destination: "/news/trinidad-trip",
+        permanent: true,
+      },
     ];
   },
 };
