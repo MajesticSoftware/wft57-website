@@ -42,19 +42,20 @@ export default function NewsIndex() {
 
       <Reveal>
         <div className="card overflow-hidden">
-          <div className="relative h-64 bg-white/5 flex items-center justify-center p-2">
-            <Image src="/images/BORoast2025_image.webp" alt="Bull & Oyster Roast 2025" fill className="object-contain" sizes="(min-width: 768px) 50vw, 100vw" />
+          <div className="relative h-80 bg-white/5 flex items-center justify-center p-2">
+            <Image src="/images/News&Events/ChristmasParty/christmas-dance-2024.png" alt="Annual Chri57mas Dance" fill className="object-contain" sizes="(min-width: 768px) 50vw, 100vw" />
           </div>
-          <div className="p-4 flex items-center justify-between gap-4">
+          <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h3 className="text-white font-semibold">Bull & Oyster Roast 2025</h3>
-              <p className="text-zinc-300 text-sm">William F. Taylor Lodge #57</p>
+              <h3 className="text-white font-semibold">Annual Chri57mas Dance</h3>
+              <p className="text-zinc-300 text-sm">December 12th • 8pm–12am • $25</p>
+              <p className="text-zinc-400 text-xs mt-1">1307 Eutaw Place, Baltimore, MD 21217 • BYOB/BYOF • Music, Raffles & Light Refreshments</p>
             </div>
             <a
-              href="https://www.simpletix.com/e/william-f-taylor-lodge-57-2025-bull-oyster-tickets-232873?utm_source=qr"
+              href="https://williamftaylor57.simpletix.com"
               target="_blank"
               rel="noreferrer"
-              className="btn-primary"
+              className="btn-primary whitespace-nowrap"
             >
               Buy Tickets
             </a>
