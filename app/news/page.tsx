@@ -43,16 +43,16 @@ export default function NewsIndex() {
       <Reveal>
         <div className="card overflow-hidden">
           <div className="relative h-80 bg-white/5 flex items-center justify-center p-2">
-            <Image src="/images/News&Events/ChristmasParty/christmas-dance-2024.png" alt="Annual Chri57mas Dance" fill className="object-contain" sizes="(min-width: 768px) 50vw, 100vw" />
+            <Image src="/images/News%26Events/ModernEvents/wft5726_BullRoast.jpeg" alt="49th Annual Bull & Oyster Roast" fill className="object-contain" sizes="(min-width: 768px) 50vw, 100vw" />
           </div>
           <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h3 className="text-white font-semibold">Annual Chri57mas Dance</h3>
-              <p className="text-zinc-300 text-sm">December 12th • 8pm–12am • $25</p>
-              <p className="text-zinc-400 text-xs mt-1">1307 Eutaw Place, Baltimore, MD 21217 • BYOB/BYOF • Music, Raffles & Light Refreshments</p>
+              <h3 className="text-white font-semibold">49th Annual Bull & Oyster Roast</h3>
+              <p className="text-zinc-300 text-sm">Sunday, November 8, 2026 • 3pm–8pm • $120</p>
+              <p className="text-zinc-400 text-xs mt-1">The Forum Caterers, 4210 Primrose Avenue, Baltimore, MD 21215 • Open Bar, Games & Live Band • Music by DJ King Tutt • No Refunds</p>
             </div>
             <a
-              href="https://williamftaylor57.simpletix.com"
+              href="https://williamftaylor57.simpletix.com/"
               target="_blank"
               rel="noreferrer"
               className="btn-primary whitespace-nowrap"
