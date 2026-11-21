@@ -42,17 +42,17 @@ export default function NewsIndex() {
 
       <Reveal>
         <div className="card overflow-hidden">
-          <div className="relative h-80 bg-white/5 flex items-center justify-center p-2">
-            <Image src="/images/News%26Events/ModernEvents/wft5726_BullRoast.jpeg" alt="49th Annual Bull & Oyster Roast" fill className="object-contain" sizes="(min-width: 768px) 50vw, 100vw" />
+          <div className="relative h-48 bg-gradient-to-br from-red-700/30 via-emerald-700/20 to-red-900/30 flex items-center justify-center p-4">
+            <Image src="/images/WFTLogo.webp" alt="WFT57" fill className="object-contain p-4" sizes="(min-width: 768px) 50vw, 100vw" />
           </div>
           <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h3 className="text-white font-semibold">49th Annual Bull & Oyster Roast</h3>
-              <p className="text-zinc-300 text-sm">Sunday, November 8, 2026 • 3pm–8pm • $120</p>
-              <p className="text-zinc-400 text-xs mt-1">The Forum Caterers, 4210 Primrose Avenue, Baltimore, MD 21215 • Open Bar, Games & Live Band • Music by DJ King Tutt • No Refunds</p>
+              <h3 className="text-white font-semibold">William F. Taylor #57 Ugly Sweater Christmas Party</h3>
+              <p className="text-zinc-300 text-sm">Friday, December 11, 2026 • 8pm–12am • $20</p>
+              <p className="text-zinc-400 text-xs mt-1">Most Worshipful Prince Hall Grand Lodge of Maryland, 1307 Eutaw Place, Baltimore, MD 21217 • Live DJ & Dancing • Wear your ugliest sweater • Bring canned goods for families in need</p>
             </div>
             <a
-              href="https://williamftaylor57.simpletix.com/"
+              href="https://www.simpletix.com/e/william-f-taylor-57-ugly-sweater-christmas-tickets-301823"
               target="_blank"
               rel="noreferrer"
               className="btn-primary whitespace-nowrap"
