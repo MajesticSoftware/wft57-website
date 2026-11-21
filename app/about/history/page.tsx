@@ -1,12 +1,5 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-
-export default function WFT57History() {
-  const router = useRouter();
-  useEffect(() => {
-    router.replace("/about#history");
-  }, [router]);
-  return null;
+export default function RedirectHistory() {
+  redirect("/about#history");
 }

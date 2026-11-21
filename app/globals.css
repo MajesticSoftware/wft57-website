@@ -1,93 +1,177 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #e5e7eb; /* gray-200 for dark layout */
-  /* WFT57 custom theme */
-  --wft57-accent: #4f8df2; /* modern blue */
-  --wft57-accent-foreground: #ffffff;
-  --wft57-gold: #f5c842; /* warm gold */
+  --background: #070b17;
+  --foreground: #e5e7eb;
+  --wft57-accent: #5b9bff;
+  --wft57-gold: #f5c842;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.1);
+  --header-h: 4rem;
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  -webkit-text-size-adjust: 100%;
 }
-
-html { scroll-behavior: smooth; }
 
 body {
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  /* Site-wide gradient background with soft glows */
-  background-color: #0b1020; /* fallback */
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+  overflow-x: clip;
+  background-color: var(--background);
   background-image:
-    radial-gradient(600px 400px at 10% 0%, rgba(47, 84, 235, 0.28), transparent 60%),
-    radial-gradient(600px 400px at 100% 100%, rgba(245, 200, 66, 0.20), transparent 60%),
-    linear-gradient(135deg, #0b1020 0%, #0d1530 35%, #0a1240 70%, #09122a 100%);
+    radial-gradient(700px 450px at 8% -5%, rgba(59, 108, 255, 0.28), transparent 65%),
+    radial-gradient(650px 450px at 100% 100%, rgba(245, 200, 66, 0.16), transparent 65%),
+    linear-gradient(160deg, #080d1d 0%, #0a1234 55%, #070d22 100%);
+  background-repeat: no-repeat;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Reusable utilities */
+h1, h2, h3 { text-wrap: balance; letter-spacing: -0.015em; }
+p { text-wrap: pretty; }
+
+::selection { background: rgba(91, 155, 255, 0.35); color: #fff; }
+
+:focus-visible {
+  outline: 2px solid var(--wft57-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Accessibility helper */
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #0b1020;
+  font-weight: 600;
+  transition: top 150ms ease;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Layout */
 .container-max {
   @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+/* Gradient headline text */
+.text-gradient {
+  background: linear-gradient(120deg, #ffffff 10%, #bcd4ff 50%, #f5d77a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wider;
+  border-color: rgba(245, 200, 66, 0.35);
+  background: rgba(245, 200, 66, 0.1);
+  color: #fbd96b;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition duration-200 select-none;
+}
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold shadow-lg transition focus:outline-none focus:ring-2 focus:ring-offset-2;
-  background: linear-gradient(135deg, #3f7be0, #7aa8ff);
-  color: #0b1020;
-  box-shadow: 0 10px 25px -10px rgba(79, 141, 242, 0.6);
+  background: linear-gradient(135deg, #4a86f0, #86b2ff);
+  color: #07102a;
+  box-shadow: 0 10px 28px -12px rgba(91, 155, 255, 0.75);
 }
-.btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
-.btn-primary:active { transform: translateY(0); }
-.btn-primary:focus { --tw-ring-color: #60a5fa; }
-
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold shadow-lg transition focus:outline-none focus:ring-2 focus:ring-offset-2;
-  background: linear-gradient(135deg, #f5c842, #ffd66b);
+  background: linear-gradient(135deg, #f5c842, #ffe08a);
   color: #1f2937;
-  box-shadow: 0 10px 25px -10px rgba(245, 200, 66, 0.6);
+  box-shadow: 0 10px 28px -12px rgba(245, 200, 66, 0.7);
 }
-.btn-secondary:hover { filter: brightness(1.05); transform: translateY(-1px); }
-.btn-secondary:focus { --tw-ring-color: #eab308; }
+.btn-ghost {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: #e5e7eb;
+}
+.btn-primary:hover,
+.btn-secondary:hover { filter: brightness(1.07); transform: translateY(-1px); }
+.btn-ghost:hover { background: var(--surface-hover); border-color: rgba(255, 255, 255, 0.2); }
+.btn-primary:active,
+.btn-secondary:active,
+.btn-ghost:active { transform: translateY(0); }
 
+/* Cards */
 .card {
-  @apply rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg transition hover:shadow-xl text-zinc-200;
+  @apply rounded-2xl text-zinc-200 transition duration-300;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.6);
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--surface-hover);
 }
 
-.prose-custom { max-width: none; }
-.prose-custom h1 { font-weight: 600; font-size: 1.875rem; line-height: 2.25rem; margin-bottom: 0.75rem; color: #e5e7eb; }
+/* Form fields */
+.field {
+  @apply mt-1.5 w-full rounded-xl px-3.5 py-2.5 text-white transition;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+}
+.field::placeholder { color: #9ca3af; }
+.field:focus { outline: none; border-color: var(--wft57-accent); box-shadow: 0 0 0 3px rgba(91, 155, 255, 0.3); }
+
+/* Long-form text */
+.prose-custom { max-width: 68ch; }
+.prose-custom h1 { font-weight: 650; font-size: 1.875rem; line-height: 2.25rem; margin-bottom: 0.75rem; color: #fff; }
 .prose-custom h2 { font-weight: 600; font-size: 1.5rem; line-height: 2rem; margin-top: 1.25rem; margin-bottom: 0.5rem; color: #f1f5f9; }
 .prose-custom h3 { font-weight: 600; font-size: 1.25rem; line-height: 1.75rem; margin-top: 1rem; margin-bottom: 0.5rem; color: #f1f5f9; }
-.prose-custom p { color: #cbd5e1; line-height: 1.75; margin-top: 0.5rem; }
+.prose-custom p { color: #cbd5e1; line-height: 1.8; margin-top: 0.85rem; }
 .prose-custom a { color: #93c5fd; text-decoration: underline; text-underline-offset: 4px; }
-.prose-custom strong { font-weight: 600; }
+.prose-custom strong { font-weight: 600; color: #f1f5f9; }
 
-/* Subtle entrance animation utility */
-.reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease, transform 600ms ease; }
-.reveal-visible { opacity: 1; transform: translateY(0); }
+/* Scroll reveal (progressive: content is visible without JS, see layout <noscript>) */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 650ms ease, transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.reveal-visible { opacity: 1; transform: none; }
 
-/* Shimmer overlay for hero blocks */
-.shimmer { position: relative; overflow: hidden; }
+/* Shimmer overlay for hero blocks: a soft diagonal sweep, no hard edges */
+.shimmer { position: relative; overflow: hidden; isolation: isolate; }
 .shimmer::after {
   content: "";
   position: absolute;
-  inset: -100% -50% auto -50%;
-  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.15) 20%, transparent 40%);
-  transform: translateX(-100%);
-  animation: shimmer 6s ease-in-out infinite;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.09) 48%, transparent 61%) no-repeat;
+  background-size: 250% 100%;
+  background-position: 120% 0;
+  animation: shimmer 8s ease-in-out infinite;
 }
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  60% { transform: translateX(120%); }
-  100% { transform: translateX(120%); }
+  0% { background-position: 120% 0; }
+  55%, 100% { background-position: -20% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .shimmer::after { animation: none; display: none; }
+  .btn-primary:hover, .btn-secondary:hover, .card-hover:hover { transform: none; }
 }

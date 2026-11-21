@@ -7,9 +7,9 @@ export default function AboutIndex() {
   return (
     <div className="space-y-8">
       <header className="space-y-2">
-        <h1 className="text-3xl font-semibold text-white">About William F. Taylor Lodge #57</h1>
+        <h1 className="text-3xl md:text-4xl font-semibold text-white">About William F. Taylor Lodge #57</h1>
         <p className="text-zinc-300">Leadership today, our trestle board, and our rich history.</p>
-        <div className="mt-4 flex flex-wrap gap-2 text-sm">
+        <div className="mt-5 flex flex-wrap gap-2 text-sm">
           <a href="#today" className="btn-primary">Today</a>
           <a href="#trestle-board" className="btn-secondary">Trestle Board</a>
           <a href="#history" className="btn-primary">WFT57 History</a>
